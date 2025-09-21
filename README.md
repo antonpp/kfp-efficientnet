@@ -1,2 +1,2 @@
 # kfp-efficientnet
-kubeflow pipeline for EfficientNet 
+sample kubeflow pipeline for EfficientNet model fine-tuning
