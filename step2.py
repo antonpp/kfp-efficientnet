@@ -199,12 +199,6 @@ def finetune_and_evaluate_pipeline(
         fine_tune_epochs=fine_tune_epochs,
         fine_tune_learning_rate=fine_tune_learning_rate,
     )
-    
-    # Request the L4 GPU for the training step
-    # This MUST match the previous run to get a cache hit
-    #train_op.set_machine_type('n1-standard-4') \
-    #        .set_accelerator_type('NVIDIA_L4') \
-    #        .set_accelerator_limit(1)
 
     train_op.set_cpu_limit('8')\
             .set_memory_limit('16G')\
@@ -215,7 +209,7 @@ def finetune_and_evaluate_pipeline(
     evaluate_op = evaluate_model(
         dataset_gcs_path=gcs_data_path,
         batch_size=batch_size,
-        model_input=train_op.outputs["model_output"], # Connect the steps
+        model_input=???, # TODO
     )
 
 # --- 5. Compile and Run the Pipeline ---

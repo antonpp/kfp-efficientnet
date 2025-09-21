@@ -288,7 +288,7 @@ def finetune_evaluate_deploy_pipeline(
         region=REGION,
         model_display_name=model_name,
         endpoint_name=endpoint_name,
-        model_input=train_op.outputs["model_output"],
+        model_input=???, # TODO
         # --- THIS IS THE FIX ---
         # We pass the returned 'dict' (which KFP calls 'output')
         # to the 'metrics_dict' parameter.

@@ -36,7 +36,7 @@ def train_efficientnet_v2s(
     learning_rate: float,
     fine_tune_epochs: int,
     fine_tune_learning_rate: float,
-    model_output: Output[Model],
+    model_output: ???, # TODO
 ):
     """
     Fine-tunes an EfficientNetV2-S model using JPGs from a GCS path.
@@ -199,10 +199,10 @@ else:
         template_path=PIPELINE_JSON,
         pipeline_root=PIPELINE_BUCKET_URI,
         enable_caching=True,
-        parameter_values={
-            "gcs_data_path": YOUR_GCS_DATA_PATH,
-            "epochs": 1,
-            "fine_tune_epochs": 1
+        parameter_values={ # TODO
+            "???": ???,
+            "???": ???,
+            ...
         }
     )
     print("Submitting pipeline job with L4 GPU request...")
